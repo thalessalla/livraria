@@ -1,0 +1,28 @@
+
+.section-home{
+  >div{
+    max-width: 1200px;
+    margin: 0 auto;
+   
+  }
+}
+
+
+.hero-section{
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-top: 6rem;
+  max-height: 50vh;
+  img{
+    max-height: 400px;
+    min-height: 150px;
+  }
+  h1{
+    color: var(--primary-color);
+    font-size: 4rem;
+  }
+  p{
+    max-width: 95ch;
+  }
+}
