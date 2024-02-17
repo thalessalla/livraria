@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSearchBooksQuery } from '../../slices/bookApiSlice'
-
+import Search from "../../assets/search.svg"
 
 
 const BookSearchComponent: React.FC = () => {
@@ -21,34 +21,40 @@ const BookSearchComponent: React.FC = () => {
 
   return (
     <div>
+      <div  className='search-books'>
       <input
         type="text"
+        placeholder='Pesquisar livros'
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch}><img src={Search} alt="Icole de uma lupa" /></button>
+      </div>
 
       {isLoading && <div>Loading...</div>}
 
-      {/* {error && (
-        <div>
-          Error: {error.status === 400 ? 'Bad Request' : 'An error occurred'}
-        </div>
-      )} */}
 
       {data && (
-        <div>
-          {data.items.map((item: any) => (
-            <div key={item.id}>
-              <h2>{item.volumeInfo.title}</h2>
-              <p>
-                {item.volumeInfo.authors && item.volumeInfo.authors.join(', ')}
-              </p>
-              {/* Adicione mais informações conforme necessário */}
-            </div>
-          ))}
-        </div>
-      )}
+  <div className='container-books'>
+    {data.items.map((item: any) => (
+      <div className='card-book' key={item.id}>
+        {item.volumeInfo.imageLinks?.smallThumbnail && (
+          <img src={item.volumeInfo.imageLinks.smallThumbnail} alt="" />
+        )}
+        <h3>{item.volumeInfo.title}</h3>
+        <p>
+          {item.volumeInfo.authors && item.volumeInfo.authors.join(', ')}
+        </p>
+        
+        {item.saleInfo?.listPrice && (
+          <p className='price-card' key={item.saleInfo.listPrice.amount}>
+            {'R$ ' + item.saleInfo.listPrice.amount}
+          </p>
+        )}
+      </div>
+    ))}
+  </div>
+)}
     </div>
   )
 }
