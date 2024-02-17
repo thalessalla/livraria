@@ -18,7 +18,7 @@ export const SignUpForm = () => {
     try {
       const response = await register({ email, password }).unwrap()
       setShowSuccess(true)
-      navigate('/')
+      navigate('/login')
     } catch (error) {
       setShowError(true)
     }

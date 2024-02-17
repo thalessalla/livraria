@@ -12,10 +12,10 @@ export const reqresApi = createApi({
       }),
     }),
     register: builder.mutation({
-      query: (newUser) => ({
+      query: ({ email, password }) => ({
         url: `register`,
         method: 'POST',
-        body: newUser,
+        body: { email, password },
       }),
     }),
   }),

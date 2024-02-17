@@ -10,7 +10,7 @@ export function Router() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signUp" element={<SignUpForm />} />
+        <Route path="/signup" element={<SignUpForm />} />
       </Routes>
     </BrowserRouter>
   )
