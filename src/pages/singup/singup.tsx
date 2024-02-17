@@ -4,6 +4,8 @@ import Alert from '@mui/material/Alert'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import "./singup.css"
+import Footer from '../../components/footer/Footer'
+import { Header } from '../../components/header/Header'
 
 export const SignUpForm = () => {
   const [email, setEmail] = useState('')
@@ -25,28 +27,40 @@ export const SignUpForm = () => {
   }
 
   return (
-    <section className='section-singup'>
-    <form onSubmit={onSubmit}>
-      <h1>Cadastre-se</h1>
-      {showSuccess && <Alert severity="success">Cadastro bem-sucedido!</Alert>}
-      {showError && <Alert severity="error">Erro no cadastro!</Alert>}
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Senha"
-      />
-      <button type="submit" disabled={isLoading}>
-        Cadastre-se
-      </button>
-      <p>Já tem uma conta?  <strong> <Link to="/login">Faça o login!</Link> </strong></p>
-    </form>
-    </section>
+    <>
+      <Header />
+      <section className="section-singup">
+        <form onSubmit={onSubmit}>
+          <h1>Cadastre-se</h1>
+          {showSuccess && (
+            <Alert severity="success">Cadastro bem-sucedido!</Alert>
+          )}
+          {showError && <Alert severity="error">Erro no cadastro!</Alert>}
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Senha"
+          />
+          <button type="submit" disabled={isLoading}>
+            Cadastre-se
+          </button>
+          <p>
+            Já tem uma conta?{' '}
+            <strong>
+              {' '}
+              <Link to="/login">Faça o login!</Link>{' '}
+            </strong>
+          </p>
+        </form>
+      </section>
+      <Footer />
+    </>
   )
 }

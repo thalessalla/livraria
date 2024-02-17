@@ -7,6 +7,7 @@ import axios from 'axios';
 import BookListComponent from "./BookList";
 import BookSearchComponent from "./Booksearch";
 import Footer from "../../components/footer/Footer";
+import { Header } from "../../components/header/Header";
 
 
 interface CatImage {
@@ -43,6 +44,7 @@ function Home(){
 
   return (
     <>
+    <Header />
       <section className="section-home">
         <div>
           <div className="hero-section">

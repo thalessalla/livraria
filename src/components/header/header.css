@@ -1,0 +1,22 @@
+header {
+  width: 100vw;
+  background-color: var(--primary-color);
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  margin-left: 20px;
+  > h2 {
+    color: #fff;
+  }
+}
