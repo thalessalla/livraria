@@ -1,13 +1,18 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit'
+import { setupListeners } from '@reduxjs/toolkit/query/react'
+import { booksApi } from '../slices/bookApiSlice'
 
-
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-
+    [booksApi.reducerPath]: booksApi.reducer,
   },
-});
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(booksApi.middleware),
+})
 
-export default store;
+
+setupListeners(store.dispatch)
+
+export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>
