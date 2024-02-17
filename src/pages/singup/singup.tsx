@@ -3,7 +3,7 @@ import { useRegisterMutation } from '../../slices/loginSlice'
 import Alert from '@mui/material/Alert'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import "./signup.css"
+import "./singup.css"
 
 export const SignUpForm = () => {
   const [email, setEmail] = useState('')
@@ -18,7 +18,7 @@ export const SignUpForm = () => {
     try {
       const response = await register({ email, password }).unwrap()
       setShowSuccess(true)
-      navigate('/')
+      navigate('/login')
     } catch (error) {
       setShowError(true)
     }
@@ -45,7 +45,7 @@ export const SignUpForm = () => {
       <button type="submit" disabled={isLoading}>
         Cadastre-se
       </button>
-      <p>Já tem uma conta?  <strong> <Link to="/">Faça o login!</Link> </strong></p>
+      <p>Já tem uma conta?  <strong> <Link to="/login">Faça o login!</Link> </strong></p>
     </form>
     </section>
   )
