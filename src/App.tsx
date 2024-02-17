@@ -1,18 +1,15 @@
-import React from 'react';
-import './App.css';
-import Home from "../src/pages/home/home"
-import { store } from './store/store';
-import { Provider }   from 'react-redux';
+import React from 'react'
+import './App.css'
+import { store } from './store/store'
+import { Provider } from 'react-redux'
+import { Router } from '../src/routes/Router'
 
 function App() {
-  return ( 
-   
-   <Provider store={ store }>
-   <Home />
-
-   </ Provider>
-   
-  );
+  return (
+    <Provider store={store}>
+      <Router />
+    </Provider>
+  )
 }
 
-export default App;
+export default App
