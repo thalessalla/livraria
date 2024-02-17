@@ -1,6 +1,7 @@
 header {
   width: 100vw;
   background-color: var(--primary-color);
+  /* background-color: var(--secundary-color); */
 }
 
 .container-header {
