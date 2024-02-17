@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import BookListComponent from "./BookList";
 import BookSearchComponent from "./Booksearch";
+import Footer from "../../components/footer/Footer";
 
 
 interface CatImage {
@@ -80,7 +81,7 @@ function Home(){
         </div>
         <BookSearchComponent />
         <BookListComponent />
-        
+        <Footer />
       </section>
     </>
   )
