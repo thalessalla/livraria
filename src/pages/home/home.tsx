@@ -26,9 +26,11 @@ function Home(){
             <div>
               <h1>BookLand</h1>
               <p>
-                Descubra o mundo literário em BookLand. 
-                Sua livraria online especializada em React, onde cada livro é uma porta para a inspiração técnica. 
-                Explore, compre e mergulhe nas páginas que expandem seu conhecimento. Bem-vindo à sua nova fonte de aprendizado.
+                Descubra o mundo literário em BookLand. Sua livraria online
+                especializada em React, onde cada livro é uma porta para a
+                inspiração técnica. Explore, compre e mergulhe nas páginas que
+                expandem seu conhecimento. Bem-vindo à sua nova fonte de
+                aprendizado.
               </p>
             </div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useLoginMutation } from '../../slices/loginSlice'
 import Alert from '@mui/material/Alert'
-import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import './login.css'
@@ -17,12 +17,22 @@ export const Login = () => {
 
   const onSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault()
+    setShowSuccess(false)
+    setShowError(false)
     try {
       const response = await login({ email, password }).unwrap()
       localStorage.setItem('token', response.token)
       localStorage.setItem('username', response.username)
       setShowSuccess(true)
-      navigate('/userPage')
+      const bookToPurchaseString = localStorage.getItem('bookToPurchase')
+      const bookToPurchase = bookToPurchaseString
+        ? JSON.parse(bookToPurchaseString)
+        : null
+      if (bookToPurchase) {
+        navigate('/carrinho')
+      } else {
+        navigate('/')
+      }
     } catch (error) {
       setShowError(true)
     }

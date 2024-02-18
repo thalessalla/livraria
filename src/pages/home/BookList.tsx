@@ -7,6 +7,8 @@ import Add from "../../assets/add.svg";
 import Added from "../../assets/added.svg";
 import { RootState } from '../../store/store';
 import { Skeleton } from '@mui/material';
+import { isAuthenticated } from '../../utils/authUtils'
+import { useNavigate } from 'react-router-dom'
 
 import './home.css';
 import { Link } from 'react-router-dom';
@@ -18,30 +20,32 @@ const BookListComponent: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState<number>(1);
+  const navigate = useNavigate()
 
   const handleAddToCart = (book: any) => {
     dispatch(addToCart(book)); 
   };
 
+
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const maxResults = 12;
-        const startIndex = (page - 1) * maxResults;
+        const maxResults = 12
+        const startIndex = (page - 1) * maxResults
 
         const response = await axios.get(
           'https://www.googleapis.com/books/v1/volumes',
           {
             params: {
-              q: "react",
+              q: 'react',
               startIndex: startIndex,
               maxResults: maxResults,
             },
           }
-        );
+        )
 
         setBooks(response.data.items)
-        setLoading(false);
+        setLoading(false)
       } catch (error) {
         if (axios.isAxiosError(error)) {
           setError(
@@ -52,18 +56,41 @@ const BookListComponent: React.FC = () => {
             'Erro ao carregar os livros: ' + (error as AxiosError).toString()
           )
         }
-        setLoading(false);
+        setLoading(false)
       }
     }
 
-    fetchBooks();
-  }, [page]);
+    fetchBooks()
+  }, [page])
 
-  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
-    setPage(value);
-  };
+  const handlePageChange = (
+    event: React.ChangeEvent<unknown>,
+    value: number
+  ) => {
+    setPage(value)
+  }
+
+const handleBuyButtonClick = (book: any) => {
+  // Verificar se o usuário está autenticado
+  if (isAuthenticated()) {
+    // Verificar se o livro já está no carrinho
+    const isInCart = cartItems.includes(book)
+    if (isInCart) {
+      // Se o livro já estiver no carrinho, redirecionar para a página do carrinho
+      navigate('/carrinho')
+    } else {
+      // Se o livro não estiver no carrinho, adicionar ao carrinho e redirecionar para a página do carrinho
+      dispatch(addToCart(book))
+      navigate('/carrinho')
+    }
+  } else {
+    // Se o usuário não estiver autenticado, redirecionar para a página de login
+    navigate('/login')
+  }
+}
 
   return (
+
     <div className='section-books'>
 
       <h2>Mais populares</h2>
@@ -87,7 +114,7 @@ const BookListComponent: React.FC = () => {
                   {'R$ ' + book.saleInfo.listPrice.amount}
                 </p>              
               )}
-              <button className="btn-add-card" onClick={() => handleAddToCart(book)}>
+              <button className="btn-add-card" onClick={() => handleBuyButtonClick(book)}>
                 <img src={cartItems.includes(book) ? Added : Add} alt="Ícone de salvar" />
               </button>
             </div>
@@ -101,8 +128,10 @@ const BookListComponent: React.FC = () => {
           onChange={handlePageChange}
         />
       </div>
+
     </div>
-  );
+  )
 }
 
 export default BookListComponent;
+
