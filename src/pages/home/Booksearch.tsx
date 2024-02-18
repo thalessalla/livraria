@@ -31,7 +31,7 @@ const BookSearchComponent: React.FC = () => {
       <button onClick={handleSearch}><img src={Search} alt="Icole de uma lupa" /></button>
       </div>
 
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <div>Carregando...</div>}
 
 
       {data && (
