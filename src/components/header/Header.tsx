@@ -15,7 +15,7 @@ export const Header = () => {
           <Link className="link" to="/signup">
             Cadastrar
           </Link>
-          <Link className="link" to="/cart">
+          <Link className="link" to="/carrinho">
             Carrinho
           </Link>
         </nav>
