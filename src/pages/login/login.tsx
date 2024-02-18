@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import './login.css'
-import { Header } from '../../components/header/Header'
-import Footer from '../../components/footer/Footer'
+
 
 export const Login = () => {
   const [email, setEmail] = useState('')
@@ -31,7 +30,6 @@ export const Login = () => {
 
   return (
     <>
-      <Header />
       <section className="section-login">
         <form onSubmit={onSubmit}>
           <h1>Login</h1>
@@ -60,7 +58,6 @@ export const Login = () => {
           </p>
         </form>
       </section>
-      <Footer />
     </>
   )
 }
