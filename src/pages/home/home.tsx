@@ -29,13 +29,9 @@ function Home(){
             <div>
               <h1>BookLand</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse at
-                sint impedit beatae incidunt ea dolores laudantium rem eius
-                aliquam? Eos, inventore ratione delectus consequatur ea
-                blanditiis aliquam nihil recusandae sint magnam adipisci
-                laudantium dolor obcaecati non, modi iste exercitationem
-                explicabo amet tenetur natus incidunt? Ex, modi consequatur?
-                Minima, provident.
+                Descubra o mundo literário em BookLand. 
+                Sua livraria online especializada em React, onde cada livro é uma porta para a inspiração técnica. 
+                Explore, compre e mergulhe nas páginas que expandem seu conhecimento. Bem-vindo à sua nova fonte de aprendizado.
               </p>
             </div>
 
