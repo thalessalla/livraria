@@ -39,7 +39,7 @@ const BookSearchComponent: React.FC = () => {
     {data.items.map((item: any) => (
       <div className='card-book' key={item.id}>
         {item.volumeInfo.imageLinks?.smallThumbnail && (
-          <img src={item.volumeInfo.imageLinks.smallThumbnail} alt="" />
+          <img src={item.volumeInfo.imageLinks.smallThumbnail} alt={item.volumeInfo.title} />
         )}
         <h3>{item.volumeInfo.title}</h3>
         <p>
