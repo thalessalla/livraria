@@ -45,9 +45,6 @@ function Home(){
             />
           </div>
 
-    <Link to="/carrinho">
-      Carrinho
-    </Link>
         </div>
         <BookSearchComponent />
         <BookListComponent />
