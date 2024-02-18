@@ -1,21 +1,25 @@
-import './home.css'
-import heroImg from '../../assets/hero-img.webp'
-import BookListComponent from './BookList'
-import BookSearchComponent from './Booksearch'
-import Footer from '../../components/footer/Footer'
-import { Header } from '../../components/header/Header'
+import "./home.css"
+import heroImg from "../../assets/hero-img.webp"
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import BookListComponent from "./BookList";
+import BookSearchComponent from "./Booksearch";
+import { Link } from "react-router-dom";
 
-// interface Books {
-//   id: string
-//   url: string
-//   likes: number
-//   comentarios: string[]
-// }
 
-function Home() {
+
+interface Books {
+  id: string;
+  url: string;
+  likes: number;
+  comentarios: string[];
+}
+
+
+function Home(){
+   
   return (
     <>
-      <Header />
       <section className="section-home">
         <div>
           <div className="hero-section">
@@ -35,10 +39,11 @@ function Home() {
               alt="Ilustração 3d de uma menina negra segurando livros"
             />
           </div>
+
         </div>
         <BookSearchComponent />
         <BookListComponent />
-        <Footer />
+
       </section>
     </>
   )

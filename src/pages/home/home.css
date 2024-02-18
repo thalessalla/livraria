@@ -33,13 +33,13 @@ h2{
 
 .section-books{
   padding-bottom: 80px;
-
 }
 
 
 .container-books{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
   margin-top: 80px;
 
@@ -47,6 +47,7 @@ h2{
 
 .card-book{
   width: 20%;
+  min-width: 180px;
   background-color: #fff;
   padding: 20px;
   margin-bottom: 60px;
@@ -92,7 +93,7 @@ height: 15px;
     border: solid var(--primary-color) 1px;
     height: 100%;
     border-radius: 4px 0 0 4px;
-    padding: 8px 16px;
+    padding: 16px 16px;
     &:focus{
       outline: var(--primary-color) 4px;
     }
@@ -112,4 +113,44 @@ height: 15px;
     }
   }
   margin-bottom: 40px;
+}
+
+.pagination-mui{
+  display: flex;
+  justify-content: center;
+}
+
+@media(max-width:1200px){
+  .section-home
+>div {
+    margin-inline: 20px;
+}
+.search-books{
+  margin-left: calc(50% - 116px);
+}
+h2{
+  text-align: center;
+}
+.hero-section{
+  margin-inline: 20px;
+}
+
+}
+
+@media (max-width:640px){
+  .hero-section{
+    margin-top: 4rem;
+  >div{
+    margin-bottom: 3rem;
+  }
+       img{
+        display: none;
+       }
+  }
+}
+
+@media (max-width:410px){
+  .card-book{
+    width: 80%;
+  }
 }
