@@ -120,6 +120,7 @@ box-shadow: 10px 10px 9px -5px rgba(140,140,140,0.35);
   }
   h1{
     font-size: 2rem;
+    line-height: 2rem;
   }
   .item-cart > div{
     flex-wrap: wrap;

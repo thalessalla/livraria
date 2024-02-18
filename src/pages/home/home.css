@@ -92,7 +92,7 @@ height: 15px;
     border: solid var(--primary-color) 1px;
     height: 100%;
     border-radius: 4px 0 0 4px;
-    padding: 8px 16px;
+    padding: 16px 16px;
     &:focus{
       outline: var(--primary-color) 4px;
     }
@@ -138,12 +138,18 @@ h2{
 
 @media (max-width:640px){
   .hero-section{
-    margin-top: 2rem;
+    margin-top: 4rem;
   >div{
     margin-bottom: 3rem;
   }
        img{
         display: none;
        }
+  }
+}
+
+@media (max-width:410px){
+  .card-book{
+    width: 80%;
   }
 }

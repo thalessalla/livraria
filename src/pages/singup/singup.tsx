@@ -4,8 +4,7 @@ import Alert from '@mui/material/Alert'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import "./singup.css"
-import Footer from '../../components/footer/Footer'
-import { Header } from '../../components/header/Header'
+
 
 export const SignUpForm = () => {
   const [email, setEmail] = useState('')
@@ -28,7 +27,6 @@ export const SignUpForm = () => {
 
   return (
     <>
-      <Header />
       <section className="section-singup">
         <form onSubmit={onSubmit}>
           <h1>Cadastre-se</h1>
@@ -60,7 +58,6 @@ export const SignUpForm = () => {
           </p>
         </form>
       </section>
-      <Footer />
     </>
   )
 }
