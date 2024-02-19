@@ -1,15 +1,11 @@
-
-import { Link } from "react-router-dom";
-// import logo from '../../assets/logo.png';
+import { Link } from 'react-router-dom'
 
 function LogoMenu() {
   return (
-
-    <div className='containerLogo'>
-     {/* <Link to="/"> <img src={logo} alt="Logo da Minha Empresa" /> </Link> */}
-     <Link to="/">BookLand</Link>
+    <div className="containerLogo">
+      <Link to="/">BookLand</Link>
     </div>
-  );
+  )
 }
 
-export default LogoMenu;
+export default LogoMenu
