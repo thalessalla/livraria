@@ -54,7 +54,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+
 
 export default function Header(props: Props) {
   const { window } = props;

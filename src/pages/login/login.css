@@ -29,9 +29,10 @@
       border-radius: 4px;
       border: none;
       padding: 0.4rem;
+      cursor: pointer;
       transition: 0.3s background-color;
       &:hover {
-        color: var(--primary-color);
+        background-color: var(--primary-color);
       }
     }
     input {

@@ -17,7 +17,12 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action: PayloadAction<any>) {
-      state.items.push(action.payload);
+      const newItem = action.payload;
+      const isItemInCart = state.items.some(item => item.id === newItem.id);
+      if (!isItemInCart) {
+        state.items.push(newItem);
+      }
+     
     },
     removeFromCart(state, action: PayloadAction<string>) {
       state.items = state.items.filter((item) => item.id !== action.payload);
@@ -33,8 +38,3 @@ export const selectCartItems = (state: RootState) => state.cart.items;
 
 
 export default cartSlice.reducer;
-
-
-
-
-

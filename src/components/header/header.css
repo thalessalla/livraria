@@ -44,6 +44,22 @@
   }
 }
 
+.logout-menu{
+  border: #fff solid 1px;
+  background-color: transparent;
+  color: #fff;
+  padding: .2rem .8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "roboto";
+  transition: all .3s;
+  &:hover{
+    color: var(--text-color);
+    border: var(--text-color) solid 1px;
+  }
+}
+
 @media (max-width: 1200px){
   .container-menu{
     margin-inline: 20px;
@@ -63,6 +79,15 @@
     }
     .containerLogo  {
       margin: 2rem 0;
+    }
+  }
+  .logout-menu{
+    border: var(--primary-color) solid 1px;
+    color: var(--primary-color);
+    transition: all .3s;
+    &:hover{
+      color: var(--text-color);
+      border: var(--text-color) solid 1px;
     }
   }
 }

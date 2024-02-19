@@ -9,6 +9,7 @@ import { RootState } from '../../store/store'
 import { Skeleton } from '@mui/material'
 import { isAuthenticated } from '../../utils/authUtils'
 import { useNavigate } from 'react-router-dom'
+import Alert from '@mui/material/Alert'
 import './home.css'
 
 
@@ -19,6 +20,7 @@ const BookListComponent: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
   const [page, setPage] = useState<number>(1)
+  const [showError, setShowError] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -68,7 +70,8 @@ const BookListComponent: React.FC = () => {
     if (isAuthenticated()) {
       const isInCart = cartItems.includes(book)
       if (isInCart) {
-        alert('Você já tem esse livro no carrinho')
+        setShowError(true)
+        // alert('Você já tem esse livro no carrinho')
       } else {
         dispatch(addToCart(book))
       }
@@ -93,7 +96,9 @@ const BookListComponent: React.FC = () => {
                   book.saleInfo.listPrice.amount !== ''
               )
               .map((book) => (
+                
                 <div className="card-book" key={book.id}>
+                  
                   <img
                     className="book-cover"
                     src={book.volumeInfo.imageLinks.smallThumbnail}
@@ -121,12 +126,16 @@ const BookListComponent: React.FC = () => {
                       alt="Ícone de salvar"
                     />
                   </button>
+                  
                 </div>
               ))}
+              
       </div>
+      {/* {showError && <Alert className='alert' severity="error">Você já adicionou este livro!</Alert>} */}
       <div className="pagination-mui">
         <Pagination count={10} page={page} onChange={handlePageChange} />
       </div>
+     
     </div>
   )
 }

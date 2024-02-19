@@ -37,7 +37,7 @@ function MenuItem() {
         </Link>
       )}
 
-      {userIsAuthenticated && <button onClick={handleLogout}>Logout</button>}
+      {userIsAuthenticated && <button onClick={handleLogout} className='logout-menu'>Logout</button>}
     </div>
   )
 }
