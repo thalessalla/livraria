@@ -29,10 +29,13 @@ export const Login = () => {
         ? JSON.parse(bookToPurchaseString)
         : null
       if (bookToPurchase) {
-        navigate('/carrinho')
+        navigate('/')
+        window.location.reload();
       } else {
         navigate('/')
+        window.location.reload();
       }
+
     } catch (error) {
       setShowError(true)
     }

@@ -1,19 +1,7 @@
 import "./home.css"
 import heroImg from "../../assets/hero-img.webp"
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import BookListComponent from "./BookList";
 import BookSearchComponent from "./Booksearch";
-import { Link } from "react-router-dom";
-
-
-
-interface Books {
-  id: string;
-  url: string;
-  likes: number;
-  comentarios: string[];
-}
 
 
 function Home(){
