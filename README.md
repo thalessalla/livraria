@@ -4,7 +4,7 @@
 <hr>
 
 ### Livraria BookLand
-[Clique aqui para visualizar o site]()
+[Clique aqui para visualizar o site](https://book-land-two.vercel.app/)
 </div>
 
 ***
