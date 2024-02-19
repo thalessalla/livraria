@@ -1,9 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { setupListeners } from '@reduxjs/toolkit/query/react'
 import { booksApi } from '../slices/bookApiSlice'
+import cartReducer from '../slices/CartSlices';
+import authReducer from '../slices/authSlice'
 
 export const store = configureStore({
   reducer: {
+    cart: cartReducer,
+    auth: authReducer,
     [booksApi.reducerPath]: booksApi.reducer,
   },
 
@@ -12,7 +15,8 @@ export const store = configureStore({
 })
 
 
-setupListeners(store.dispatch)
+export default store;
 
-export type AppDispatch = typeof store.dispatch
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+

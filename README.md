@@ -1,46 +1,119 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>Projeto Final Módulo Redux</p>
+<hr>
 
-## Available Scripts
+### Livraria BookLand
+[Clique aqui para visualizar o site](https://book-land-two.vercel.app/)
+</div>
 
-In the project directory, you can run:
+***
 
-### `npm start`
+## Índice
+* [1. Prefácio](#1-prefácio)
+* [2. Orientações para a Tarefa](#2-orientações-para-a-tarefa)
+* [3. Detalhamento](#3-detalhamento)
+  * [3.1 Paleta de Cores](#31-paleta-de-cores)
+* [4. Instruções para acessar o projeto](#4-instruções-para-acessar-o-projeto)
+* [5. Desenvolvedores](#5-desenvolvedores)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+***
 
-### `npm test`
+## 1. Prefácio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Quinta atividade do módulo de *Redux* desenvolvida para o programa de estágio Vem Ser da empresa DBC Company - turma 13, que tem como objetivo desenvolver as nossas habilidades com o *Redux RTK Query* integrando o conhecimento adquirido em aula.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2. Orientações para a Tarefa
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Criar um sistema de Livraria online onde:
+- Cadastro e login de user;
+- Área logada;
+- Listagem de livros com preço;
+- Adicionar ao carrinho;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Trabalhar com as seguintes *APIs*:
 
-### `npm run eject`
+- [Reqres](https://reqres.in/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Google *Books APIs*](https://developers.google.com/books/docs/v1/using?hl=pt-br)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Requisitos:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- *Redux RTK Query*;
+- Estilização básica;
+- Usar os métodos *GET* e *POST*;
+- Ter área logada;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 3. Detalhamento
 
-## Learn More
+Para esta tarefa, criamos a aplicação de livraria *on-line* de nome **BookLand** com as seguints funcionalidades:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- *Home*
+  - Começando pelo *Header*, o menu é dinâmico e se modifica  ao efetuar o *login*. Sem usuário *logado*, aparecem as opções de navegação para as telas de "*Home*", "*Login*" e "Cadastre-se". Com usuário *logado* as opções de navegação se alteram para "*Home*", "Carrinho" e "*Logout*".
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - É possível realizar buscas pelo nome do livro no *input* de pesquisa.
+
+  - Os *cards* dos livros renderizados na tela, contam com nome, autor e preço, além do botão comprar que ao clicar verifica se existe um usuário *logado*, caso não tenha, o usuário é redirecionado para a tela de *Login*. 
+  Após realizar o *login*, quando clicar no botão comprar, o mesmo fica selecionado e é incluso à página de "Carrinho".
+
+  - A *Home* também conta com o recurso *skeleton* e paginação.
+
+- Carrinho
+  - A opção de navegar para a página de carrinho somente é disponibilizada após o usuário se *logar* na aplicação.
+
+  - No carrinho é possível remover o livro selecionado ou voltar à *home* para escolher outros livros.
+
+- *NotFound*
+  - Criamos uma tela dedicada para a caso a rota não seja encontrada.
+  
+  <img src="./src/assets/notFoundPage.webp" alt="ilustração de um gato com um livro aberto, e o texto indicando que a página não foi encontrada" title="Página NotFound">
+
+Todas as páginas são responsivas.
+
+  ### 3.1 Paleta de cores
+  <br>
+  <img src="./src/assets/paletaDeCores.webp" alt="Paleta de Cores" title="Paleta de Cores">
+
+***
+
+## 4. Instruções para acessar o projeto
+
+Para configurar e executar o projeto, siga as instruções abaixo:
+
+**Clonar o Projeto:**
+Execute o comando `git clone https://github.com/thalessalla/livraria.git` para clonar o repositório em sua máquina local.
+
+**Instalação das Dependências:**
+Execute o comando `npm install` na raiz do projeto para instalar todas as dependências necessárias.
+
+**Iniciar o Projeto:**
+Utilize o comando `npm start` na raiz do projeto
+
+**Para realizar o login**
+Utilize as seguintes credenciais para realizar o *login*:
+
+- **email**: `eve.holt@reqres.in` 
+- **senha**: `cityslicka`
+
+**Para realizar o cadastro**
+Utilize as seguintes credenciais para realizar o cadastro:
+
+- **email**: `eve.holt@reqres.in` 
+- **senha**: `pistol`
+
+ ***
+
+  ### 5. Desenvolvedores 
+
+  #### Camila Gonçalves <br> 
+  [Linkedin](https://www.linkedin.com/in/camilanpgoncalves/) | [Github](https://github.com/CamilaVerso)
+  <br>
+
+
+ #### Thales Salla <br> 
+ [Linkedin](https://www.linkedin.com/in/thales-salla/) | [Github](https://github.com/thalessalla)
+  <br>
+
+  ***

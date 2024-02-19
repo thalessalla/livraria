@@ -26,3 +26,132 @@
     max-width: 95ch;
   }
 }
+
+h2{
+  color: var(--primary-color);
+}
+
+.section-books{
+  padding-bottom: 80px;
+}
+
+
+.container-books{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 80px;
+
+}
+
+.card-book{
+  width: 20%;
+  min-width: 180px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 60px;
+  border: #dbdbdb solid thin;
+  position: relative;
+  h3{
+    color: var(--primary-color);
+  }
+  p{
+    color: var(--text-color);
+  }
+ .book-cover{
+    margin-top: -60px;
+    -webkit-box-shadow: 10px 10px 9px -5px rgba(140,140,140,0.35);
+-moz-box-shadow: 10px 10px 9px -5px rgba(140,140,140,0.35);
+box-shadow: 10px 10px 9px -5px rgba(140,140,140,0.35);
+ 
+  }
+}
+
+.price-card{
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+
+.btn-add-card{
+  position: absolute;
+  bottom: 10px;
+  border: none;
+  background-color: #fff ;
+  cursor: pointer;
+  transition: all .3s;
+  &:hover{
+    scale: 1.1;
+  }
+}
+
+.search-books{
+height: 15px;
+  input{
+    border: solid var(--primary-color) 1px;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+    padding: 16px 16px;
+    &:focus{
+      outline: var(--primary-color) 4px;
+    }
+  }
+  button{
+    padding: 7px;
+    background-color: var(--primary-color);
+    border: solid var(--primary-color) 1px;
+    border-radius: 0 4px 4px 0;
+    transition: background-color .3s;
+    img{
+      height: 14px;
+      filter: brightness(10);
+    }
+    &:hover{
+      background-color: #528065;
+    }
+  }
+  margin-bottom: 40px;
+}
+
+.pagination-mui{
+  display: flex;
+  justify-content: center;
+}
+
+
+@media(max-width:1200px){
+  .section-home
+>div {
+    margin-inline: 20px;
+}
+.search-books{
+  margin-left: calc(50% - 116px);
+}
+h2{
+  text-align: center;
+}
+.hero-section{
+  margin-inline: 20px;
+}
+
+}
+
+@media (max-width:640px){
+  .hero-section{
+    margin-top: 4rem;
+  >div{
+    margin-bottom: 3rem;
+  }
+       img{
+        display: none;
+       }
+  }
+}
+
+@media (max-width:410px){
+  .card-book{
+    width: 80%;
+  }
+}
